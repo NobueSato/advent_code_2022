@@ -32,5 +32,12 @@ fs.readFile('./input.txt', (err, data) => {
     sumCal = 0;
     }
     }
-  console.log(`the highest calories is ${numOfMostCal}`); 
+  
+  // Part 1
+    console.log(`the highest calories is ${numOfMostCal}`); 
+
+  // Part 2
+  elfList.sort(function(a, b){return b - a});                       // Descending order
+  numOfMostCal = elfList[0] + elfList[1] + elfList[2];
+  console.log(`The calories that the top 3 elves carrying the calory most in total is ${numOfMostCal}`); 
 })
