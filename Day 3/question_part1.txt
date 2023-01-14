@@ -32,6 +32,6 @@ Find the item type that appears in both compartments of each rucksack. What is t
 
 To begin, get your puzzle input.
 
-Answer: 
+Answer: 7826
  
 
