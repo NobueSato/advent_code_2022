@@ -4,13 +4,6 @@ Advent of code 2022 - Day 3: Rucksack Reorganization (Answer)
 
 */
 
-// read data
-// declare priporities array
-// store data into array, first and second pack split them in half. If the line has 16 chars, then 8 char each
-// loop through and search through the second pack if the current element of first pack appears in the second pack
-// if so store the char into priporities array
-// after loop is done, go through priporities array and score the priority and calculate the score
-
 const fs = require('fs');                                       // Import the fs module to work with the file system
 
 const priorityScore = {
@@ -32,10 +25,10 @@ fs.readFile('./input.txt', "utf-8", (err, data)=>{
     let second = items.substring(separator);
     
     // Check the duplicated item and stop if found
-    for(let i = 0, done = 0; i < first.length && !done; i++){
+    for(let i = 0; i < first.length; i++){
       if(first.indexOf(second[i]) > -1){
         priorities.push(second[i]);
-        done = 1;
+        break;
       } 
     }
   }
@@ -45,6 +38,25 @@ fs.readFile('./input.txt', "utf-8", (err, data)=>{
     score = score + priorityScore[element];
   }
   
+  console.log(`The score is ${score}`);
+  
+  // Part 2
+  priorities = [];                                          // Set priorities array to a new empty array (replace the original reference)
+  score = 0;                                                // Set score to 0
+  for(let i = 0; i < Rucksack.length; i += 3){               // Loop through Rucksack by 3 lines. If it's i + 3, it is being evaluated as an expression, not being assigned back to i.
+    for(let j = 0; j < Rucksack[i].length; j++){            // Loop through each sack one by one (char by char)
+      if(Rucksack[i + 1].includes(Rucksack[i][j]) && Rucksack[i + 2].includes(Rucksack[i][j]) ){
+        priorities.push(Rucksack[i][j]);
+        break;
+      }
+    }
+  }
+
+  // Calculate the score
+  for(const element of priorities){
+    score = score + priorityScore[element];
+  }
+
   console.log(`The score is ${score}`);
 
 })
