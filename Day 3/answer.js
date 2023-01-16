@@ -15,6 +15,7 @@ const priorityScore = {
 
 
 fs.readFile('./input.txt', "utf-8", (err, data)=>{
+  if (err) throw err;                                             // Throw err if the file cannot be read
   let priorities = [];                                          // Declare an empty array(priorities)
   let Rucksack = data.split('\n');                              // Split data by \n and store them into an array(Rucksack)
   let score = 0;
