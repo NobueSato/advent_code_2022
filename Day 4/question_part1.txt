@@ -41,4 +41,4 @@ In how many assignment pairs does one range fully contain the other?
 
 To begin, get your puzzle input.
 
-Answer: 
+Answer: 503
