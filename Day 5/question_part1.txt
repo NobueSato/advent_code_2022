@@ -51,4 +51,4 @@ After the rearrangement procedure completes, what crate ends up on top of each s
 
 To begin, get your puzzle input.
 
-Answer:
+Answer: VRWBSFZWM
