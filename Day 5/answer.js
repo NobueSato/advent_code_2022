@@ -35,10 +35,18 @@ fs.readFile('./input.txt', "utf-8", (err, data)=>{
     const to = match[3] - 1;
 
     console.log(`Move ${move} From ${from + 1} To ${to + 1}`);
-    let elementToMove = organizedStack[from].splice(0, move);
-    for(let i = 0; i < elementToMove.length; i++) {
-      organizedStack[to].splice(0, 0, elementToMove[i]);
-    }
+    // Please uncomment below for each part
+    // Part 1
+    // let elementToMove = organizedStack[from].splice(0, move);
+    // for(let i = 0; i < elementToMove.length; i++) {
+    //   organizedStack[to].splice(0, 0, elementToMove[i]);
+    // }
+
+    // Part 2
+    // let elementToMove = organizedStack[from].splice(0, move);
+    // for(let i = elementToMove.length - 1; i >= 0; i--) {
+    //   organizedStack[to].splice(0, 0, elementToMove[i]);
+    // }
     
     for(const element of organizedStack){
       console.log(element);
